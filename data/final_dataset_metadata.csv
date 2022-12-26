@@ -1,0 +1,20 @@
+﻿variable,definition
+fish.id,"unique identification number for each host specimen; number includes the museum (e.g., UW), catalogue number used by the museum, and unique identifier for each individual fish within that catalogue number"
+year,year in which host specimen was collected
+site,locality where host specimen was collected as latitude longitude
+lat,latitude of site in decimal degrees
+long,longitude of site in decimal degrees
+fish.spc,"species of the fish host (sole = Parophrys vetulus, rockfish = Sebastes caurinus, hake = Merluccius productus, pollock = Gadus chalcogrammus, perch = Embiotoca lateralis, smelt = Hypomesus pretiosus, ratfish = Hydrolagus colliei, herring = Clupea pallasii)"
+length_mm,total length of fish in mm
+length,"total length of fish in mm, standardized by centering on zero and scaling to have standard deviation = 1"
+para.spc,"long code for parasite species (to translate these into the short codes shown in Figure 2 and Supplementary Information Table S3, see parasite_species_codes.csv) "
+par.type,"broad taxonomic grouping of para.spc (i.e., Subclass Copepoda, Subclass Hirudinea, Class Monogenea, Class Trematoda, Class Cestoda, Phylum Nematoda, Phylum Acanthocephala; see also Supplementary Information Table S3)"
+lifecycle,"transmission strategy of the parasite; designates whether para.spc has a direct life cycle (i.e., only one obligately required host species) or a complex life cycle (i.e., more than one obligately required host species; see also Supplementary Information Table S3)"
+nhosts,"the number of obligately required host species in the parasite species' life cycle (= 1 for directly transmitted parasites, >1 for complex life cycle parasites)"
+count,number of parasite individuals of para.spc found in host individual fish.id
+sfish_density,standardized density of the fish host fish.spc; each fish.spc was standardized separately by centering on zero and scaling to have standard deviation = 1
+temp_na_rm,temperature in degrees Celsius in the year of collection of host individual fish.id
+ord1raw,raw values of ordination score for each fish.id from principal component axis 1
+ord2raw,raw values of ordination score for each fish.id from principal component axis 2
+ord1,"values of ordination score for each fish.id from principal component axis 1 after we removed outliers, interpolated for missing values, and ran LOESS smoothing"
+ord2,"values of ordination score for each fish.id from principal component axis 2 after we removed outliers, interpolated for missing values, and ran LOESS smoothing"
