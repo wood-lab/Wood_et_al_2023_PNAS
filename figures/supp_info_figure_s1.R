@@ -1,5 +1,6 @@
 #Are there any species that possibly went extinct?
-
+library(dplyr)
+library(ggplot2)
 data<-readRDS("data/compiled_data.RDS")
 
 str(data)
