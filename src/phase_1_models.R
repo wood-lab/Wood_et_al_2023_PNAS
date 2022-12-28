@@ -293,12 +293,7 @@ plotdf$model  <- as.factor(plotdf$model)
 plotdf %>%
   mutate(model = fct_relevel(model, "No grouping", "Group by # hosts"))
 
-png(filename = "src/figures/compare_ranef.png",
-    width = 6,
-    height = 4,
-    units = "in",
-    res = 300
-)
+
 plotdf %>%
   mutate(model = fct_relevel(model, "No grouping", "Group by # hosts")) %>% 
   ggplot(aes(x = ghat, y = ..density.., weight = tau)) +
@@ -319,7 +314,7 @@ plotdf %>%
   theme(legend.text = element_text(size = 12)) + 
   theme(strip.background = element_blank()) + 
   theme(axis.line=element_line())
-dev.off()                               
+                            
 
 
 ### Make parameter tables ####
