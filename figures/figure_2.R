@@ -65,18 +65,3 @@ indiv_psites_plot<-ggplot(final_data_ordered,aes(x=Estimate,y=psite_code,label=n
 
 indiv_psites_plot
 
-
-# Need to make a small inset panel showing the overall temporal trend for complex LC and directly transmitted parasites
-
-# This plot gets made by loading src/analysis/fitted_time_effects.Rdata and then running the ggplot code at the bottom of
-# make_predicted_values.R
-
-# Then I save it down so I can plot it in the indiv_psites_plot
-
-figure_w_inset <- ggdraw(plot=NULL,xlim=c(0,10),ylim=c(0,20))+
-  draw_plot(indiv_psites_plot,x=0,y=0,width=10,height=20)+
-  draw_image("figures/fitted_time_effects.jpeg",x=7,y=16,width=3,height=3)
-figure_w_inset
-
-
-

@@ -26,8 +26,6 @@ library(dplyr)
 library(cowplot)
 
 
-
-
 #Read in data
 
 lots<-read.csv("data/for_plotting/all_fish_spp.csv")
@@ -35,14 +33,12 @@ str(lots)
 
 lots$Species.name<-gsub("Clupea palasii pallasii","Clupea pallasii",lots$Family.Species)
 lots$Species.name<-gsub("Clupea palasii ","Clupea pallasii",lots$Species.name)
-
 lots$Species.name<-gsub("Theragra chalcogramma", "Gadus chalcogrammus",lots$Species.name)
 
 #Find the right colors
 
 wes_palette("Zissou1")
 pal<-wes_palette(name = "Zissou1", 9, type = "continuous")
-
 
 #Map
 

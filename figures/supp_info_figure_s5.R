@@ -25,6 +25,7 @@ for (i in 1:length(spc)) {
 
 NHspc <- as.integer(NH.spc.tmp -1)
 load("src/analysis/phase_1_results.Rdata")
+
 ### Plot random effects histograms ####
 # no grouping
 rep.byspecies <- models$rep.byspecies

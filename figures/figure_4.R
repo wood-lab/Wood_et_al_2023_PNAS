@@ -9,11 +9,6 @@ library(viridis)
 library(gridExtra)
 
 # Start by making a figure that summarizes the slopes of the various putative drivers
-
-# Load the parameter estimates in the file phase_2_results.Rdata, which creates a list object.
-#load("~/Dropbox/Vault/University of Washington/Projects/Historical parasites/Innovation Award/PoP_Allspp/src/analysis/phase_2_results.Rdata")
-
-# now load phase 2 results
 load("src/analysis/phase_2_results.Rdata")
 driver_slopes <- models$fit_summary
 
@@ -219,5 +214,5 @@ drivers_panels <- ggdraw(plot=NULL,xlim=c(0,30),ylim=c(0,10))+
   draw_label("(b)",x=8.2,y=9.5,size=24) +
   draw_label("(c)",x=19.2,y=9.5,size=24)
   #draw_label("(d)",x=10.4,y=9.5,size=24)
-drivers_panels
 dev.off()
+drivers_panels

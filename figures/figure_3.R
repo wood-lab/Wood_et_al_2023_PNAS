@@ -45,23 +45,19 @@ Xint <- model.matrix(~ -1 + hostpar, data = thedata)
 # Now make the fixed effects, need to do this in two steps to add in parasite-level fish dependence
 # separate fish length effects for each parasite / fish combo
 Xlength <- Xint * as.numeric(thedata$length)
-
 Xlat <- model.matrix(~ -1 +  para.spc, data = thedata) * as.numeric(thedata$slat) 
 Xlong <- model.matrix(~ -1 + para.spc, data = thedata) * as.numeric(thedata$slong)
 
 # random effects design matrix - parasite specific year effects
 U <- model.matrix(~ -1 + para.spc, data = thedata) * as.numeric(scale(thedata$year))
 Z <- model.matrix(~ -1 + fish.id, data = thedata)
-
 spc <- levels(thedata$para.spc)
 nspc <- length(spc)
-
 
 
 # create a vector of parasite species ID for each observation
 Xspc <- as.numeric(thedata$para.spc) -1
 spc.groups <- levels(thedata$par.type)
-
 y <- thedata$count
 
 
@@ -73,6 +69,7 @@ for (i in 1:length(spc)) {
   LH.spc.tmp[i] <- dplyr::filter(thedata, para.spc == spc[i])$lifecycle[1]
   NH.spc.tmp[i] <- dplyr::filter(thedata, para.spc == spc[i])$nhosts[1]
 }
+
 # subtract 1 for C++ indexing
 taxgroup <- tax.tmp -1
 LHspc <- LH.spc.tmp -1
@@ -124,6 +121,7 @@ parameters <- list(bobar = 0,
 
 
 model <- "glmm_byspecies_lh_predict"
+
 ### Create Handy Function ####
 compile.and.load <- function(model) {
   compile(paste0("src/TMB/", model, ".cpp"))

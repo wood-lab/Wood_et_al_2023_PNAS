@@ -76,3 +76,4 @@ simulationOutput <- list(scaledResiduals = scaledResiduals,
                          refit = F)
 
 resid.tests <- plot.DHARMat(simulationOutput)
+
