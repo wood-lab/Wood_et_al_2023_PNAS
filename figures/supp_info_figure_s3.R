@@ -1,4 +1,6 @@
-
+### Supplementary Information Figure S3
+### Created by Chelsea Wood
+### chelwood@uw.edu
 
 library(tidyverse)
 library(dplyr)

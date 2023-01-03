@@ -1,6 +1,6 @@
-### Drivers plot
-### Created by Chelsea Wood
-### 1 Mar 2022
+### Figure 4
+### Created by Tim Essington and Chelsea Wood
+### essing@uw.edu and chelwood@uw.edu
 
 library(tidyverse)
 library(ggplot2)

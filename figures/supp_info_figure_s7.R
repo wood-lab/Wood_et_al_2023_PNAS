@@ -1,3 +1,7 @@
+### Supplementary Information Figure S7
+### Created by Tim Essington
+### essing@uw.edu
+
 # Script to make QQ plot for Model 3 (phase 1) and temp model (phase 2)
 library(TMB)
 library(glmmTMB)

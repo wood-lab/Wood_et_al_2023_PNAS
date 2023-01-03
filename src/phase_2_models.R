@@ -1,3 +1,7 @@
+### Phase 2 analysis
+### Created by Tim Essington
+### essing@uw.edu
+
 ## Fit 4 different glmm to parasite data, only including those with complex life history.
 #.  Each model has the same base parameters as follows:
 ## (1) unique intercepts for each parasite / fish species combination

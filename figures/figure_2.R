@@ -1,6 +1,6 @@
-### All parasites plot - responses to time
+### Figure 2
 ### Created by Chelsea Wood
-### 24 Jan 2021
+### chelwood@uw.edu
 
 library(tidyverse)
 library(cowplot)

@@ -1,3 +1,7 @@
+### Supplementary Information Figure S4
+### Created by Tim Essington
+### essing@uw.edu
+
 library(ggplot2)
 library(ggbiplot)
 

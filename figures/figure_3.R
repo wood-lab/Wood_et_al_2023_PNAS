@@ -1,3 +1,7 @@
+### Figure 3
+### Created by Tim Essington
+### essing@uw.edu
+
 ## Source code to get expected values
 rm(list = ls())
 library(TMB)

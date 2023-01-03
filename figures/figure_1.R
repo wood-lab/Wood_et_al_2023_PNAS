@@ -1,6 +1,6 @@
-# Map of all lots
-# Created by Chelsea Wood
-# 21 Jan 2021
+### Figure 1
+### Created by Chelsea Wood
+### chelwood@uw.edu
 
 library(maps)
 library(mapdata)

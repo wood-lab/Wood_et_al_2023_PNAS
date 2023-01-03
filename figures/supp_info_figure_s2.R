@@ -1,3 +1,7 @@
+### Supplementary Information Figure S2
+### Created by Tim Essington
+### essing@uw.edu
+
 library(TMB)
 library(ggplot2)
 library(tidyr)

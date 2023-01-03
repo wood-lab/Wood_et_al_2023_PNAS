@@ -1,3 +1,7 @@
+### File for dharma functions
+### Created by Tim Essington
+### essing@uw.edu
+
 getPt <- function(simulated, observed, alternative, plot = F){
   
   if(alternative == "greater") p = mean(simulated >= observed)

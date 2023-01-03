@@ -1,3 +1,7 @@
+### Phase 1 analysis
+### Created by Tim Essington
+### essing@uw.edu
+
 library(tidyr)
 library(TMB)
 library(dplyr)

@@ -1,4 +1,7 @@
-### File to setup and configure data for TMB model runs
+### File to set up and configure data for TMB model runs
+### Created by Tim Essington
+### essing@uw.edu
+
 #### Create Design Matrixes #####
 # for convenience, make separate design matrix for intercepts (all par / fish combos)
 Xint <- model.matrix(~ -1 + hostpar, data = thedata)

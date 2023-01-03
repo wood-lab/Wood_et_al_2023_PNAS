@@ -1,3 +1,7 @@
+### Supplementary Information Figure S5
+### Created by Tim Essington
+### essing@uw.edu
+
 library(dplyr)
 
 source("src/load_data.R")

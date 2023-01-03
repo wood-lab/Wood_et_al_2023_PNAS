@@ -1,3 +1,7 @@
+### Supplementary Information Figure S1
+### Created by Chelsea Wood
+### chelwood@uw.edu
+
 #Are there any species that possibly went extinct?
 library(dplyr)
 library(ggplot2)
