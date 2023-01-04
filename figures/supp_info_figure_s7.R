@@ -73,6 +73,35 @@ make_data <- function(thedata,
   red.data$hostpar <- droplevels(red.data$hostpar)
   return(red.data)
 }
+rem_data <- function(red.data) {
+  notzero <- function(x)
+    min(1, x)
+  tmp.data <- red.data
+  red.data$foo <- sapply(X = red.data$count, FUN = notzero)
+  data_summary <- red.data %>%
+    group_by(para.spc, fish.spc) %>%
+    summarise(ntotal = n(), nfoo = sum(foo))
+  
+  data_summary$prop <- data_summary$nfoo / data_summary$ntotal
+  if (min(data_summary$prop) < 0.05) {
+    data_rem <- data_summary[data_summary$prop < 0.05, ]
+    rem.par.spc <- as.array(as.character(data_rem$para.spc))
+    rem.fish.spc <- as.array(as.character(data_rem$fish.spc))
+    
+    tmp.data$para.spc <- as.character(tmp.data$para.spc)
+    tmp.data$fish.spc <- as.character(tmp.data$fish.spc)
+    for (i in 1:nrow(data_rem)) {
+      index <-
+        which(tmp.data$para.spc == rem.par.spc[i] &
+                tmp.data$fish.spc == rem.fish.spc[i])
+      tmp.data <- tmp.data[-index, ]
+    }
+    tmp.data$para.spc <- as.factor(tmp.data$para.spc)
+    tmp.data$fish.spc <- as.factor(tmp.data$fish.spc)
+  }
+  return(tmp.data)
+}
+
 red.data <- make_data(thedata, incl.temp = T)
 red.data <- rem_data(red.data)
 U <- model.matrix(~ -1 + para.spc, data = red.data) * as.numeric(scale(red.data$temp_na_rm))
@@ -118,9 +147,4 @@ simulationOutput <- list(scaledResiduals = scaledResiduals,
                          refit = F)
 
 resid.tests_phase2 <- plot.DHARMat(simulationOutput)
-
-
-
-
-
 
